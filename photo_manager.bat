@@ -8,7 +8,7 @@ REM INIT: Move everything in the "backup" folder
 set actual_step=Moving to backup
 echo Moving files to the backup folder...
 if not exist backup md backup
-for /d %%a IN (%cd%\*) do (
+for /d %%a IN ("%cd%\*") do (
     if NOT "%%~na" == "backup" (
         echo "%%a"| findstr /r ".*\\[0-9][0-9][0-9][0-9].[0-9][0-9]\" >nul 2>&1
         if !errorlevel! == 1 (
